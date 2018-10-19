@@ -1,2 +1,47 @@
 ---
-# vars file for awsbeats
+
+awsbeats_filebeat_dstpath: '{{ awsbeats_filebeat_dstdir }}/{{
+                                awsbeats_filebeat_dstname }}'
+
+awsbeats_filebeat_srcname: 'filebeat-{{ awsbeats_version }}'
+
+awsbeats_filebeat_url: '{{ awsbeats_tagurl }}/{{
+                              awsbeats_filebeat_srcname }}'
+
+awsbeats_install:
+  - '{{ awsbeats_install_filebeat }}'
+  - '{{ awsbeats_install_kinesis }}'
+
+awsbeats_install_filebeat:
+  dir: '{{ awsbeats_filebeat_dstdir }}'
+  dirmode: '{{ awsbeats_install_dirmode }}'
+  filemode: '{{ awsbeats_install_filemode }}'
+  group: '{{ awsbeats_install_group }}'
+  owner: '{{ awsbeats_install_owner }}'
+  path: '{{ awsbeats_filebeat_dstpath }}'
+  url: '{{ awsbeats_filebeat_url }}'
+
+awsbeats_install_kinesis:
+  dir: '{{ awsbeats_kinesis_dstdir }}'
+  dirmode: '{{ awsbeats_install_dirmode }}'
+  filemode: '{{ awsbeats_install_filemode }}'
+  group: '{{ awsbeats_install_group }}'
+  owner: '{{ awsbeats_install_owner }}'
+  path: '{{ awsbeats_kinesis_dstpath }}'
+  url: '{{ awsbeats_kinesis_url }}'
+
+awsbeats_kinesis_dstpath: '{{ awsbeats_kinesis_dstdir }}/{{
+                               awsbeats_kinesis_dstname }}'
+
+awsbeats_kinesis_srcname: 'kinesis-{{ awsbeats_version }}.so'
+
+awsbeats_kinesis_url: '{{ awsbeats_tagurl }}/{{
+                          awsbeats_kinesis_srcname }}'
+
+awsbeats_releases: '{{ awsbeats_repo }}/releases'
+
+awsbeats_repo: 'https://github.com/s12v/awsbeats'
+
+awsbeats_tagurl: '{{ awsbeats_releases }}/tag/{{ awsbeats_repo_tag }}'
+
+awsbeats_version: 'v{{ awsbeats_repo_tag }}-{{ awsbeats_repo_build }}'

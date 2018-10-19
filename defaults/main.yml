@@ -1,3 +1,23 @@
 ---
 
-aw
+awsbeats_filebeat_dstdir: '/usr/local/bin'
+
+awsbeats_filebeat_dstname: 'filebeat'
+
+awsbeats_install_dirmode: '0755'
+
+awsbeats_install_enabled: true
+
+awsbeats_install_filemode: '0755'
+
+awsbeats_install_group: 'root'
+
+awsbeats_install_owner: 'root'
+
+awsbeats_kinesis_dstdir: '/usr/local/lib/filebeat'
+
+awsbeats_kinesis_dstname: 'filebeat-kinesis-plugin.so'
+
+awsbeats_repo_build: 'go1.10-linux-amd64'
+
+awsbeats_repo_tag: '0.2.7-v6.4.0'
