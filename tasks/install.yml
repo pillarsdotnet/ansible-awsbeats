@@ -1,0 +1,25 @@
+---
+    
+- name: 'Stat directory.'
+  stat:
+    get_attributes: false
+    get_checksum: false
+    get_md5: false
+    get_mime: false
+    path: '{{ item.dir }}'
+    register: 'awsbeats_dir'
+- name: 'Create directory if does not exist.'
+  file:
+    group: '{{ item.group }}'
+    mode: '{{ item.dirmode }}'
+    owner: '{{ item.owner }}'
+    path: '{{ item.dir }}'
+    state: 'directory'
+  when: 'not awsbeats_dir.stat.exists'
+- name: 'Install binary.'
+  get_url:
+    dest: '{{ item.path }}'
+    group: '{{ awsbeats_install_group }}'
+    mode: '{{ awsbeats_install_filemode }}'
+    owner: '{{ awsbeats_install_owner }}'
+    url: '{{ item.url }}'

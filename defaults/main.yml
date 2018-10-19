@@ -1,23 +1,57 @@
 ---
 
-awsbeats_filebeat_dstdir: '/usr/local/bin'
+awsbeats_default_bindir: '{{ awsbeats_default_root }}/bin'
 
-awsbeats_filebeat_dstname: 'filebeat'
+awsbeats_default_build: 'go1.10-linux-amd64'
 
-awsbeats_install_dirmode: '0755'
+awsbeats_default_dirmode: '0755'
 
-awsbeats_install_enabled: true
+awsbeats_default_enabled: true
 
-awsbeats_install_filemode: '0755'
+awsbeats_default_filemode: '0755'
 
-awsbeats_install_group: 'root'
+awsbeats_default_group: 'root'
 
-awsbeats_install_owner: 'root'
+awsbeats_default_libdir: '{{ awsbeats_default_root }}/lib'
 
-awsbeats_kinesis_dstdir: '/usr/local/lib/filebeat'
+awsbeats_default_libfilebeat: '{{ awsbeats_default_libdir }}/filebeat'
 
-awsbeats_kinesis_dstname: 'filebeat-kinesis-plugin.so'
+awsbeats_default_owner: 'root'
 
-awsbeats_repo_build: 'go1.10-linux-amd64'
+awsbeats_default_root: '/usr/local'
 
-awsbeats_repo_tag: '0.2.7-v6.4.0'
+awsbeats_default_tag: '0.2.7-v6.4.0'
+
+awsbeats_install_filebeat_dir: '{{ awsbeats_default_bindir }}'
+
+awsbeats_install_filebeat_dirmode: '{{ awsbeats_default_dirmode }}'
+
+awsbeats_install_filebeat_enabled: '{{ awsbeats_default_enabled }}'
+
+awsbeats_install_filebeat_filemode: '{{ awsbeats_default_filemode }}'
+
+awsbeats_install_filebeat_group: '{{ awsbeats_default_group }}'
+
+awsbeats_install_filebeat_name: 'filebeat'
+
+awsbeats_install_filebeat_owner: '{{ awsbeats_default_owner }}'
+
+awsbeats_install_filebeat_url: '{{ awsbeats_releases }}/filebeat-{{
+                                   awsbeats_version }}'
+
+awsbeats_install_kinesis_dir: '{{ awsbeats_default_libfilebeat }}'
+
+awsbeats_install_kinesis_dirmode: '{{ awsbeats_default_dirmode }}'
+
+awsbeats_install_kinesis_enabled: '{{ awsbeats_default_enabled }}'
+
+awsbeats_install_kinesis_filemode: '{{ awsbeats_default_filemode }}'
+
+awsbeats_install_kinesis_group: '{{ awsbeats_default_group }}'
+
+awsbeats_install_kinesis_name: 'kinesis.so'
+
+awsbeats_install_kinesis_owner: '{{ awsbeats_default_owner }}'
+
+awsbeats_install_kinesis_url: '{{ awsbeats_releases }}/kinesis-{{
+                                  awsbeats_version }}.so'
