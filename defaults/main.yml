@@ -1,5 +1,9 @@
 ---
 
+awsbeats_async_timeout: '{{ ansible_async_timeout|default(1000) }}'
+
+awsbeats_async_tries: '{{ ansible_async_tries|default(30) }}'
+
 awsbeats_default_bindir: '{{ awsbeats_default_root }}/bin'
 
 awsbeats_default_build: 'go1.10-linux-amd64'

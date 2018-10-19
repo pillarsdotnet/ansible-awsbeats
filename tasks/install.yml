@@ -7,7 +7,7 @@
     get_md5: false
     get_mime: false
     path: '{{ item.dir }}'
-    register: 'awsbeats_dir'
+  register: 'awsbeats_dir'
 - name: 'Create directory if does not exist.'
   file:
     group: '{{ item.group }}'
@@ -16,10 +16,22 @@
     path: '{{ item.dir }}'
     state: 'directory'
   when: 'not awsbeats_dir.stat.exists'
-- name: 'Install binary.'
+- name: 'Install binary (get_url).'
   get_url:
     dest: '{{ item.path }}'
     group: '{{ awsbeats_install_group }}'
     mode: '{{ awsbeats_install_filemode }}'
     owner: '{{ awsbeats_install_owner }}'
     url: '{{ item.url }}'
+  async: '{{ awsbeats_async_timeout }}'
+  register: 'awsbeats_install_1'
+- name: 'Install binary (async_status)'
+  async_status:
+    jid: '{{ awsbeats_install_1.ansible_job_id }}'
+  register: 'awsbeats_install_1_result'
+  retries: '{{ awsbeats_async_tries }}'
+  until: 'awsbeats_install_1_result is defined and
+          awsbeats_install_1_result.finished|default(false)'
+  when: 'awsbeats_install_1 is defined and not (
+         awsbeats_install_1.finished|default(false) or
+         awsbeats_install_1.ansible_job_id is not defined)'
