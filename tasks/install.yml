@@ -19,9 +19,9 @@
 - name: 'Install binary (get_url).'
   get_url:
     dest: '{{ item.dir }}/{{ item.name }}'
-    group: '{{ awsbeats_install_group }}'
-    mode: '{{ awsbeats_install_filemode }}'
-    owner: '{{ awsbeats_install_owner }}'
+    group: '{{ item.group }}'
+    mode: '{{ item.filemode }}'
+    owner: '{{ item.owner }}'
     url: '{{ item.url }}'
   async: '{{ awsbeats_async_timeout }}'
   register: 'awsbeats_install_1'
