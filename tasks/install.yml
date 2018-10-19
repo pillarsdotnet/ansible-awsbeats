@@ -18,7 +18,7 @@
   when: 'not awsbeats_dir.stat.exists'
 - name: 'Install binary (get_url).'
   get_url:
-    dest: '{{ item.path }}'
+    dest: '{{ item.dir }}/{{ item.name }}'
     group: '{{ awsbeats_install_group }}'
     mode: '{{ awsbeats_install_filemode }}'
     owner: '{{ awsbeats_install_owner }}'
