@@ -18,6 +18,13 @@ awsbeats_install:
     owner: '{{ awsbeats_install_kinesis_owner }}'
     url: '{{ awsbeats_install_kinesis_url }}'
 
-awsbeats_releases: 'https://github.com/s12v/awsbeats/releases/download'
+awsbeats_download: 'https://github.com/s12v/awsbeats/releases/download/{{
+                    awsbeats_tag }}'
 
-awsbeats_version: 'v{{ awsbeats_default_tag }}-{{ awsbeats_default_build }}'
+awsbeats_filebeat_tag: 'v{{ awsbeats_install_filebeat_ver }}-{{
+                            awsbeats_default_build }}'
+
+awsbeats_tag: '{{ awsbeats_install_kinesis_ver }}-v{{
+                  awsbeats_install_filebeat_ver }}'
+
+awsbeats_kinesis_tag: '{{ awsbeats_tag }}-{{ awsbeats_default_build }}'

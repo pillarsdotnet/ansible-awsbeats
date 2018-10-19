@@ -20,8 +20,6 @@ awsbeats_default_owner: 'root'
 
 awsbeats_default_root: '/usr/local'
 
-awsbeats_default_tag: '0.2.7-v6.4.0'
-
 awsbeats_install_filebeat_dir: '{{ awsbeats_default_bindir }}'
 
 awsbeats_install_filebeat_dirmode: '{{ awsbeats_default_dirmode }}'
@@ -36,8 +34,10 @@ awsbeats_install_filebeat_name: 'filebeat'
 
 awsbeats_install_filebeat_owner: '{{ awsbeats_default_owner }}'
 
-awsbeats_install_filebeat_url: '{{ awsbeats_releases }}/filebeat-{{
-                                   awsbeats_version }}'
+awsbeats_install_filebeat_url: '{{ awsbeats_download }}/filebeat-{{
+                                   awsbeats_filebeat_tag }}'
+
+awsbeats_install_filebeat_ver: '6.4.0'
 
 awsbeats_install_kinesis_dir: '{{ awsbeats_default_libfilebeat }}'
 
@@ -53,5 +53,7 @@ awsbeats_install_kinesis_name: 'kinesis.so'
 
 awsbeats_install_kinesis_owner: '{{ awsbeats_default_owner }}'
 
-awsbeats_install_kinesis_url: '{{ awsbeats_releases }}/kinesis-{{
-                                  awsbeats_version }}.so'
+awsbeats_install_kinesis_url: '{{ awsbeats_download }}/kinesis-{{
+                                  awsbeats_kinesis_tag }}.so'
+
+awsbeats_install_kinesis_ver: '0.2.7'
