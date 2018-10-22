@@ -73,8 +73,8 @@ awsbeats_install_filebeat_opts: >-
   --e
   --path.config {{ awsbeats_default_appconf }}
   --path.data {{ awsbeats_default_appdata }}
-  --path.home {{ awsbeats_install_applib }}
-  --path.logs {{ awsbeats_install_applog }}
+  --path.home {{ awsbeats_default_applib }}
+  --path.logs {{ awsbeats_default_applog }}
   --plugin {{ awsbeats_install_kinesis_dir }}/{{ awsbeats_install_kinesis_name }}
 
 awsbeats_install_filebeat_owner: '{{ awsbeats_default_owner }}'
