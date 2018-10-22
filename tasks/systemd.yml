@@ -2,11 +2,11 @@
 
 - name: 'Enable service.'
   command:
-    args:
-      argv:
-        - 'systemctl'
-        - '--force'
-        - '--no-block'
-        - '--now'
-        - 'enable'
-        - '{{ awsbeats_default_libdir }}/system/awsbeats.service' 
+  args:
+    argv:
+      - 'systemctl'
+      - '--force'
+      - '--no-block'
+      - '--now'
+      - 'enable'
+      - '{{ awsbeats_default_libdir }}/system/awsbeats.service' 
