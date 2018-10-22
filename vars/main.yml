@@ -28,7 +28,7 @@ awsbeats_install:
   - dir: '{{ awsbeats_install_conf_dir }}'
     dirmode: '{{ awsbeats_install_conf_dirmode }}'
     enabled: '{{ awsbeats_install_conf_enabled }}'
-    filemode: '{}{ awsbeats_install_conf_filemode }}'
+    filemode: '{{ awsbeats_install_conf_filemode }}'
     group: '{{ awsbeats_install_conf_group }}'
     name: '{{ awsbeats_install_conf_name }}'
     owner: '{{ awsbeats_install_conf_owner }}'
