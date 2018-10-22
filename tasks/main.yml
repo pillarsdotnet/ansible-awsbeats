@@ -5,7 +5,5 @@
   loop: '{{ awsbeats_install }}'
   when: 'item.enabled'
 
-- name: 'Configure.'
-
 - name: 'Enable and start service.'
   include_tasks: '{{ ansible_service_mgr }}.yml'
