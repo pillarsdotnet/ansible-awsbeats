@@ -16,6 +16,7 @@
         mode: '{{ item.dirmode }}'
         owner: '{{ item.owner }}'
         path: '{{ item.dir }}'
+        recurse: true
         state: 'directory'
       when: 'not awsbeats_dir.stat.exists'
     - name: 'Ensure url and name are set.'
