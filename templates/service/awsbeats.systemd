@@ -1,0 +1,16 @@
+{{ ansible_managed|comment }}
+
+[Unit]
+Description=Filebeat with Kinesis output plugin.
+Documentation=https://github.com/s12v/awsbeats
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+WorkingDirectory={{ awsbeats_default_appvar }}
+ExecStart={{ awsbeats_install_filebeat_exec }} {{ 
+             awsbeats_install__filebeat_opts }}
+
+[Install]
+WantedBy=multi-user.target

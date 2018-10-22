@@ -1,0 +1,3 @@
+{{ ansible_managed|comment }}
+
+{{ awsbeats_conf|to_nice_yaml }}

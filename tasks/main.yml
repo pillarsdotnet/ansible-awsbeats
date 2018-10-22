@@ -1,6 +1,11 @@
 ---
 
-- name: 'Download and install.'
+- name: 'Create files and directories.'
   include_tasks: 'install.yml'
   loop: '{{ awsbeats_install }}'
   when: 'item.enabled'
+
+- name: 'Configure.'
+
+- name: 'Enable and start service.'
+  include_tasks: '{{ ansible_service_mgr }}.yml'
