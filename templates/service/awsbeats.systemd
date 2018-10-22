@@ -8,7 +8,7 @@ After=network.target
 [Service]
 Type=simple
 Restart=always
-WorkingDirectory={{ awsbeats_default_appvar }}
+WorkingDirectory={{ awsbeats_default_appdata }}
 ExecStart={{ awsbeats_install_filebeat_exec }} {{ 
              awsbeats_install__filebeat_opts }}
 
