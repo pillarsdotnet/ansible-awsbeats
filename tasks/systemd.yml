@@ -1,9 +1,12 @@
 ---
 
 - name: 'Enable service.'
-  systemd:
-    name: '{{ awsbeats_default_libdir }}/system/awsbeats.service'
-    enabled: true
-    force: true
-    no_block: true
-    state: 'started'
+  command:
+    args:
+      argv:
+        - 'systemctl'
+        - '--force'
+        - '--no-block'
+        - '--now'
+        - 'enable'
+        - '{{ awsbeats_default_libdir }}/system/awsbeats.service' 
