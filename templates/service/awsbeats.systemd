@@ -9,8 +9,8 @@ After=network.target
 Type=simple
 Restart=always
 WorkingDirectory={{ awsbeats_default_appdata }}
-ExecStart={{ awsbeats_install_filebeat_exec }} {{ 
-             awsbeats_install_filebeat_opts }}
+ExecStart={{ awsbeats_install_awsbeats_exec }} {{
+             awsbeats_install_awsbeats_opts }}
 
 [Install]
 WantedBy=multi-user.target
