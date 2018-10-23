@@ -1,6 +1,11 @@
 ---
 
 awsbeats_install:
+  - dir: '{{ awsbeats_default_appdata }}'
+    dirmode: '{{ awsbeats_default_dirmode }}'
+    enabled: true
+    group: '{{ awsbeats_default_group }}'
+    owner: '{{ awsbeats_default_owner }}'
   - dir: '{{ awsbeats_install_filebeat_dir }}'
     dirmode: '{{ awsbeats_install_filebeat_dirmode }}'
     enabled: '{{ awsbeats_install_filebeat_enabled }}'
