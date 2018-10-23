@@ -103,7 +103,7 @@ awsbeats_install_kinesis_url: '{{ awsbeats_download }}/kinesis-{{
 
 awsbeats_install_kinesis_ver: '0.2.7'
 
-awsbeats_install_service_dir: '{{ awsbeats_default_libdir }}/system'
+awsbeats_install_service_dir: '{{ awsbeats_default_applib }}/system'
 
 awsbeats_install_service_dirmode: '{{ awsbeats_default_dirmode }}'
 
