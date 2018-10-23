@@ -8,4 +8,4 @@
       - '--force'
       - '--now'
       - 'enable'
-      - '{{ awsbeats_default_appdir }}/system/awsbeats.service' 
+      - '{{ awsbeats_default_applib }}/system/awsbeats.service' 
