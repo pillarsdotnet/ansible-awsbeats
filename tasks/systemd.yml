@@ -6,7 +6,6 @@
     argv:
       - 'systemctl'
       - '--force'
-      - '--no-block'
       - '--now'
       - 'enable'
       - '{{ awsbeats_default_libdir }}/system/awsbeats.service' 
