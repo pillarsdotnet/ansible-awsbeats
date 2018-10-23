@@ -6,8 +6,6 @@ awsbeats_async_tries: '{{ ansible_async_tries|default(30) }}'
 
 awsbeats_conf: {}
 
-awsbeats_default_bindir: '{{ awsbeats_default_root }}/bin'
-
 awsbeats_default_build: 'go1.10-linux-amd64'
 
 awsbeats_default_confdir: '{{ awsbeats_default_root }}/etc'
@@ -52,23 +50,23 @@ awsbeats_install_conf_name: 'awsbeats.yml'
 
 awsbeats_install_conf_owner: '{{ awsbeats_default_owner }}'
 
-awsbeats_install_filebeat_dir: '{{ awsbeats_default_bindir }}'
+awsbeats_install_awsbeats_dir: '{{ awsbeats_default_applib }}'
 
-awsbeats_install_filebeat_dirmode: '{{ awsbeats_default_dirmode }}'
+awsbeats_install_awsbeats_dirmode: '{{ awsbeats_default_dirmode }}'
 
-awsbeats_install_filebeat_enabled: '{{ awsbeats_default_enabled }}'
+awsbeats_install_awsbeats_enabled: '{{ awsbeats_default_enabled }}'
 
-awsbeats_install_filebeat_exec: '{{ awsbeats_install_filebeat_dir }}/{{
-                                    awsbeats_install_filebeat_name }} {{
-                                    awsbeats_install_filebeat_opts }}'
+awsbeats_install_awsbeats_exec: '{{ awsbeats_install_awsbeats_dir }}/{{
+                                    awsbeats_install_awsbeats_name }} {{
+                                    awsbeats_install_awsbeats_opts }}'
 
-awsbeats_install_filebeat_filemode: '{{ awsbeats_default_filemode }}'
+awsbeats_install_awsbeats_filemode: '{{ awsbeats_default_filemode }}'
 
-awsbeats_install_filebeat_group: '{{ awsbeats_default_group }}'
+awsbeats_install_awsbeats_group: '{{ awsbeats_default_group }}'
 
-awsbeats_install_filebeat_name: 'filebeat'
+awsbeats_install_awsbeats_name: 'filebeat'
 
-awsbeats_install_filebeat_opts: >-
+awsbeats_install_awsbeats_opts: >-
   --c {{ awsbeats_install_conf_name }}
   --e
   --path.config {{ awsbeats_default_appconf }}
@@ -77,12 +75,12 @@ awsbeats_install_filebeat_opts: >-
   --path.logs {{ awsbeats_default_applog }}
   --plugin {{ awsbeats_install_kinesis_dir }}/{{ awsbeats_install_kinesis_name }}
 
-awsbeats_install_filebeat_owner: '{{ awsbeats_default_owner }}'
+awsbeats_install_awsbeats_owner: '{{ awsbeats_default_owner }}'
 
-awsbeats_install_filebeat_url: '{{ awsbeats_download }}/filebeat-{{
+awsbeats_install_awsbeats_url: '{{ awsbeats_download }}/filebeat-{{
                                    awsbeats_filebeat_tag }}'
 
-awsbeats_install_filebeat_ver: '6.4.0'
+awsbeats_install_awsbeats_ver: '6.4.0'
 
 awsbeats_install_kinesis_dir: '{{ awsbeats_default_applib }}'
 

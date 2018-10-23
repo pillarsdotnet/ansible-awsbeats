@@ -6,14 +6,14 @@ awsbeats_install:
     enabled: true
     group: '{{ awsbeats_default_group }}'
     owner: '{{ awsbeats_default_owner }}'
-  - dir: '{{ awsbeats_install_filebeat_dir }}'
-    dirmode: '{{ awsbeats_install_filebeat_dirmode }}'
-    enabled: '{{ awsbeats_install_filebeat_enabled }}'
-    filemode: '{{ awsbeats_install_filebeat_filemode }}'
-    group: '{{ awsbeats_install_filebeat_group }}'
-    name: '{{ awsbeats_install_filebeat_name }}'
-    owner: '{{ awsbeats_install_filebeat_owner }}'
-    url: '{{ awsbeats_install_filebeat_url }}'
+  - dir: '{{ awsbeats_install_awsbeats_dir }}'
+    dirmode: '{{ awsbeats_install_awsbeats_dirmode }}'
+    enabled: '{{ awsbeats_install_awsbeats_enabled }}'
+    filemode: '{{ awsbeats_install_awsbeats_filemode }}'
+    group: '{{ awsbeats_install_awsbeats_group }}'
+    name: '{{ awsbeats_install_awsbeats_name }}'
+    owner: '{{ awsbeats_install_awsbeats_owner }}'
+    url: '{{ awsbeats_install_awsbeats_url }}'
   - dir: '{{ awsbeats_install_kinesis_dir }}'
     dirmode: '{{ awsbeats_install_kinesis_dirmode }}'
     enabled: '{{ awsbeats_install_kinesis_enabled }}'
@@ -42,10 +42,10 @@ awsbeats_install:
 awsbeats_download: 'https://github.com/s12v/awsbeats/releases/download/{{
                     awsbeats_tag }}'
 
-awsbeats_filebeat_tag: 'v{{ awsbeats_install_filebeat_ver }}-{{
+awsbeats_filebeat_tag: 'v{{ awsbeats_install_awsbeats_ver }}-{{
                             awsbeats_default_build }}'
 
 awsbeats_tag: '{{ awsbeats_install_kinesis_ver }}-v{{
-                  awsbeats_install_filebeat_ver }}'
+                  awsbeats_install_awsbeats_ver }}'
 
 awsbeats_kinesis_tag: '{{ awsbeats_tag }}-{{ awsbeats_default_build }}'
