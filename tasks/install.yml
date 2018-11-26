@@ -44,11 +44,11 @@
         - '"url" in item'
         - '"name" in item'
     - name: 'Install template.'
+      notify: 'restart awsbeats'
       template:
         dest: '{{ item.dir }}/{{ item.name }}'
         group: '{{ item.group }}'
         mode: '{{ item.filemode }}'
-        notify: 'restart awsbeats'
         owner: '{{ item.owner }}'
         src: '{{ item.template }}'
       when:
