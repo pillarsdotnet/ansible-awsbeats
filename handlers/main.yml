@@ -1,2 +1,7 @@
 ---
-# handlers file for awsbeats
+
+- name: 'restart awsbeats'
+  service:
+    enabled: true
+    name: 'awsbeats'
+    state: 'restarted'
